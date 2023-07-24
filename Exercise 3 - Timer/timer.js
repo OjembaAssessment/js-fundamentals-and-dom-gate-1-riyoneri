@@ -7,6 +7,12 @@ const secondsHolder = document.getElementById("seconds")
 const resetBtn = document.getElementById("reset")
 const startBtn = document.getElementById("start")
 
+const changeColors = () => {
+    reduceBtn.classList.toggle("active")
+    addBtn.classList.toggle("active")
+    resetBtn.classList.toggle("active");
+}
+
 let timer;
 
 reduceBtn.addEventListener("click", () => {
@@ -39,9 +45,11 @@ startBtn.addEventListener("click", () => {
     if (timer) {
         startBtn.textContent = "START"
         clearInterval(timer)
+        changeColors()
         return timer = null
     }
 
+    changeColors()
     startBtn.textContent = "STOP"
     timer = setInterval(() => {
         seconds--
@@ -50,6 +58,7 @@ startBtn.addEventListener("click", () => {
             clearInterval(timer)
             startBtn.textContent = "START"
             timer = null;
+            changeColors()
         }
     }, 1000);
 })
