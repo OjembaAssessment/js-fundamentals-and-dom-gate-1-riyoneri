@@ -50,7 +50,6 @@ const simpleColors = [
     "orchid",
     "slategray",
     "plum",
-    "lavender",
     "peru",
     "khaki",
     "peach",
