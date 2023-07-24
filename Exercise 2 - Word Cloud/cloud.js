@@ -23,8 +23,47 @@ const fragment = new DocumentFragment()
 
 let fontSize = 68;
 
+const simpleColors = [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "orange",
+    "purple",
+    "pink",
+    "brown",
+    "gray",
+    "cyan",
+    "magenta",
+    "lime",
+    "teal",
+    "olive",
+    "navy",
+    "maroon",
+    "gold",
+    "silver",
+    "indigo",
+    "coral",
+    "salmon",
+    "turquoise",
+    "violet",
+    "orchid",
+    "slategray",
+    "plum",
+    "lavender",
+    "peru",
+    "khaki",
+    "peach",
+    "aquamarine",
+    "chartreuse",
+    "crimson",
+    "rose",
+];
+
 wordCloud.innerHTML = ""
+
 for (let i = 0; i < 12; i++) {
-    let span = `<span style="font-size: ${fontSize -= 4}px; margin: 0 20px;">${sortedArr[i][0]}</span>`
+    const randomColor = simpleColors[Math.trunc(Math.random() * simpleColors.length)]
+    let span = `<span style="font-size: ${fontSize -= 4}px; margin: 0 20px; color:${randomColor};">${sortedArr[i][0]}</span>`
     wordCloud.insertAdjacentHTML("beforeEnd", span)
 }
