@@ -1,3 +1,4 @@
+console.log("Exercise 3 - Timer");
 const reduceBtn = document.getElementById("subtract")
 const addBtn = document.getElementById("add")
 
